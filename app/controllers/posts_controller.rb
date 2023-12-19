@@ -12,6 +12,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    debugger
     if @post.save
       flash[:notice] = 'Post created 🚀'
     else
@@ -50,6 +51,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, :photo)
   end
 end

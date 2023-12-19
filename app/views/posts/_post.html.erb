@@ -1,4 +1,7 @@
 <%= turbo_frame_tag dom_id(post) do %>
+  <% if post.photo.attached? %>
+    <%= image_tag cloudfront_url(post.photo.key) %>
+  <% end %>
   <p><%= post.title %>
     <%= link_to edit_post_path(post) do %>
       <%= icon('fa-solid', 'pencil') %>
