@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>DedevLab thoughts</h1>
+
+  <% if @posts.empty? %>
+    <p>Be the first one!</p>
+  <% else %>
+    <ul>
+      <%= render @posts %>
+    </ul>
+  <% end %>
+
+  <%= link_to 'Leave our thughts', '#', class: 'btn btn-outline-primary' %>
+  <%= turbo_frame_tag(Post.new) do %>
+    <p>Sera</p>
+  <% end %>
+
+</div>
