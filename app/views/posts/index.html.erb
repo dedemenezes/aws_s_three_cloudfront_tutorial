@@ -9,9 +9,8 @@
     </ul>
   <% end %>
 
-  <%= link_to 'Leave our thughts', '#', class: 'btn btn-outline-primary' %>
-  <%= turbo_frame_tag(Post.new) do %>
-    <p>Sera</p>
+  <%= turbo_frame_tag(@post) do %>
+    <%= link_to 'Leave our thughts', new_post_path(@post), class: 'btn btn-outline-primary' %>
   <% end %>
 
 </div>
