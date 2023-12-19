@@ -1,0 +1,8 @@
+<% if @post.valid? %>
+  <%= turbo_stream.append :posts, @post %>
+  <%= turbo_stream.update(:flashes, partial: "shared/flashes") %>
+  <%= turbo_stream.update Post.new, partial: 'new_link', locals: { post: Post.new } %>
+<% else %>
+  <%= turbo_stream.update Post.new, partial: 'form', locals: { post: @post } %>
+  <%= turbo_stream.update(:flashes, partial: "shared/flashes") %>
+<% end %>

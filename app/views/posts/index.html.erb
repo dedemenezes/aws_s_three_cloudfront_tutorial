@@ -1,16 +1,18 @@
+<%= turbo_stream_from :posts %>
+
 <div class="container">
-  <h1>DedevLab thoughts</h1>
+  <h1>DedevLab Thoughts</h1>
 
   <% if @posts.empty? %>
     <p>Be the first one!</p>
   <% else %>
-    <ul>
+    <ul id='posts'>
       <%= render @posts %>
     </ul>
   <% end %>
 
   <%= turbo_frame_tag(@post) do %>
-    <%= link_to 'Leave our thughts', new_post_path(@post), class: 'btn btn-outline-primary' %>
+    <%= render 'new_link', post: @post %>
   <% end %>
 
 </div>

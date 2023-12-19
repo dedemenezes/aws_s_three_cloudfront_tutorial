@@ -1,0 +1,10 @@
+<%= turbo_frame_tag(post) do %>
+  <%= simple_form_for post do |f| %>
+    <%= f.input :title %>
+    <%= f.input :content %>
+    <div class="d-flex justify-content-start gap-3">
+      <%= f.button :submit, class: 'btn btn-outline-primary rounded-pill' %>
+      <%= link_to 'Cancel', root_path(post), class: 'btn btn-outline-warning rounded-pill' %>
+    </div>
+  <% end %>
+<% end %>
