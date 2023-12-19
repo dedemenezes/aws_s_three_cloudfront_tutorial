@@ -12,7 +12,6 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    debugger
     if @post.save
       flash[:notice] = 'Post created 🚀'
     else
